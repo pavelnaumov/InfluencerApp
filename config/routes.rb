@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
+  # get 'reviews/index'
+  # get 'reviews/create'
+  # get 'reviews/edit'
+  # get 'reviews/destroy'
+  # get 'jobs/index'
+  # get 'jobs/show'
+  # get 'jobs/create'
+  # get 'influencers/index'
+  # get 'influencers/show'
+  # devise_for :users
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :influencers, only: [:index, :show] do
+  end
+
+  resources :jobs, only: [:index, :show, :create] do
+    resources :reviews, except: [:new, :show, :update]
+  end
 end
