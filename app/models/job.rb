@@ -1,6 +1,4 @@
 class Job < ApplicationRecord
-  belongs_to :influencer
-  belongs_to :client
-
+  belongs_to :user
   has_many :reviews
 end

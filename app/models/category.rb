@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  belongs_to :influencer, optional: true
+  belongs_to :user
 end
