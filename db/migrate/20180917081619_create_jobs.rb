@@ -4,8 +4,7 @@ class CreateJobs < ActiveRecord::Migration[5.2]
       t.string :media_type
       t.integer :price
       t.string :content_type
-      t.references :influencer, foreign_key: true
-      t.references :client, foreign_key: true
+      t.references :user, foreign_key: true
 
       t.timestamps
     end

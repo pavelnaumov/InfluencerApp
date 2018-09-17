@@ -10,61 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_140203) do
+ActiveRecord::Schema.define(version: 2018_09_17_081730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.string "category_name"
+    t.text "description"
     t.string "picture"
-    t.bigint "influencer_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["influencer_id"], name: "index_categories_on_influencer_id"
-  end
-
-  create_table "clients", force: :cascade do |t|
-    t.string "username"
-    t.string "NIF"
-    t.string "location"
-    t.string "company"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "influencers", force: :cascade do |t|
-    t.string "username"
-    t.string "photo"
-    t.string "NIF"
-    t.string "location"
-    t.string "age"
-    t.string "influence_level"
-    t.string "global_score"
-    t.string "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|
     t.string "media_type"
     t.integer "price"
     t.string "content_type"
-    t.bigint "influencer_id"
-    t.bigint "client_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_jobs_on_client_id"
-    t.index ["influencer_id"], name: "index_jobs_on_influencer_id"
-  end
-
-  create_table "media_channels", force: :cascade do |t|
-    t.string "name"
-    t.bigint "influencer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["influencer_id"], name: "index_media_channels_on_influencer_id"
+    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -84,13 +52,22 @@ ActiveRecord::Schema.define(version: 2018_09_15_140203) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
+    t.string "nif"
+    t.string "location"
+    t.integer "age"
+    t.string "gender"
+    t.string "company"
+    t.string "influence_level"
+    t.integer "global_score"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "categories", "influencers"
-  add_foreign_key "jobs", "clients"
-  add_foreign_key "jobs", "influencers"
-  add_foreign_key "media_channels", "influencers"
+  add_foreign_key "categories", "users"
+  add_foreign_key "jobs", "users"
   add_foreign_key "reviews", "jobs"
 end
