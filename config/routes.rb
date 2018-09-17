@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :influencers, only: [:index, :show] do
   end
 
-  resources :jobs, only: [:index, :show, :create] do
+  resources :jobs, only: [:index, :show, :create, :new] do
     resources :reviews, except: [:new, :show, :update]
   end
 end

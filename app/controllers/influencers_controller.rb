@@ -1,10 +1,10 @@
 class InfluencersController < ApplicationController
   
   def index
-    @influencers = Influencer.all
+    @influencers = User.all.where(role: 0)
   end
 
   def show
-    @influencer = Influencer.find(params[:id])
+    @influencer = User.find(params[:id])
   end
 end
