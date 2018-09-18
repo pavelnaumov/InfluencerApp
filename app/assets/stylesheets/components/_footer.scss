@@ -1,0 +1,29 @@
+#footer_box {
+  height: 220px;
+  width: 100%;
+  background-color: #3C3D41;
+  color: #FFFFFF;
+
+  position: absolute;
+  bottom: 0px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .text_footer {
+    padding-top: 15px;
+  }
+
+
+    .social_links {
+      ul  {
+        list-style: none;
+
+      }
+
+    }
+
+
+}
