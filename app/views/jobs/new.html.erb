@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
+        <%= simple_form_for [@job] do |f| %>
+        <div class="form-actions">
+          <i class="fas fa-minus" onclick="decrease()"></i>
+          <input name="item[doses]" type="number" min="1" max="99" value="1" class="val" id="number" readonly>
+          <i class="fas fa-plus" onclick="increase()"></i>
+          <%#= f.button :submit, 'Add to Cart', class: "button" %>
+          <input type="submit" name="commit" value="Add to Your Order" class="button" data-toggle="modal" data-target="#exampleModal">
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<script>
+  function decrease() {
+    let val = document.querySelector(".val");
+    if(parseInt(val.value) > parseInt(val.min)) {
+      val.value = parseInt(val.value) - 1;
+    }
+    return val;
+  }
+  function increase() {
+    let val = document.querySelector(".val");
+    if(parseInt(val.value) < parseInt(val.max)) {
+      val.value = parseInt(val.value) + 1;
+    }
+    return val;
+  }
+</script>

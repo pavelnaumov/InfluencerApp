@@ -128,7 +128,7 @@ User.create!(
   nif: "253344",
   location: "Porto",
   company: "Super Company Co.",
-  email:' joao@mail.com',
+  email:'joao@mail.com',
   password: 123456,
   role: 1
   )
