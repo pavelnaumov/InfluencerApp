@@ -1,13 +1,13 @@
 class Job < ApplicationRecord
-  include Current
+  # include Current
   
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :reviews
 
-  after_initialize :set_client_id, :if => :new_record?
+  # after_initialize :set_client_id, :if => :new_record?
 
-  def set_client_id
+  # def set_client_id
 
-    self.client_id = Current.user.id
-  end
+  #   self.client_id = Current.user.id
+  # end
 end
