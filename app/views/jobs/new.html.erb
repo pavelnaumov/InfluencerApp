@@ -1,19 +1,63 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-
-        <%= simple_form_for [@job] do |f| %>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-4">
+      <h1> Proposal for <%= @influencer.username %></h1>
+      <!-- 
+        Instagram divs  -->
+        <% if @influencer.media_type == "instagram" %>
+        <%= simple_form_for Job.new ,:url => {:action => :create, :controller => :jobs} do |f| %>
+        <label for="formGroupExampleInput">Instagram Stories</label>
         <div class="form-actions">
           <i class="fas fa-minus" onclick="decrease()"></i>
-          <input name="item[doses]" type="number" min="1" max="99" value="1" class="val" id="number" readonly>
+          <input name="job[content_type]" type="number" min="1" max="99" value="1" class="insta_stories" id="number" readonly>
           <i class="fas fa-plus" onclick="increase()"></i>
-          <%#= f.button :submit, 'Add to Cart', class: "button" %>
-          <input type="submit" name="commit" value="Add to Your Order" class="button" data-toggle="modal" data-target="#exampleModal">
+          <!-- <input type="submit" name="commit" value="Add to Your Order" class="button" data-toggle="modal" data-target="#exampleModal"> -->
         </div>
-        <% end %>
+        <label for="formGroupExampleInput">Instagram Posts</label>
+        <div class="form-actions">
+          <i class="fas fa-minus" onclick="decrease2()"></i>
+          <input name="job[content_type]" type="number" min="1" max="99" value="1" class="insta_posts" id="number" readonly>
+          <i class="fas fa-plus" onclick="increase2()"></i>
+          <!-- <input type="submit" name="commit" value="Add to Your Order" class="button" data-toggle="modal" data-target="#exampleModal"> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Job Description</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button class="btn btn-success" type="submit"> Submit your Proposal</button>
       </div>
-    </div>
+      <% end %>
+      <% end %>
+<!-- 
+  Youtube divs  -->
+
+  <% if @influencer.media_type == "youtube" %>
+  <%= simple_form_for Job.new ,:url => {:action => :create, :controller => :jobs} do |f| %>
+  <label for="formGroupExampleInput">YouTube Videos</label>
+  <div class="form-actions">
+    <i class="fas fa-minus" onclick="decrease3()"></i>
+    <input name="job[content_type]" type="number" min="1" max="99" value="1" class="youtube_vids" id="number" readonly>
+    <i class="fas fa-plus" onclick="increase3()"></i>
+    <!-- <input type="submit" name="commit" value="Add to Your Order" class="button" data-toggle="modal" data-target="#exampleModal"> -->
   </div>
+  <label for="formGroupExampleInput">YouTube References</label>
+  <div class="form-actions">
+    <i class="fas fa-minus" onclick="decrease4()"></i>
+    <input name="job[content_type]" type="number" min="1" max="99" value="1" class="youtube_refs" id="number" readonly>
+    <i class="fas fa-plus" onclick="increase4()"></i>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Job Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button class="btn btn-success" type="submit"> Submit your Proposal</button>
+  </div>
+  <% end %>
+  <% end %>
+
+
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -21,18 +65,71 @@
 
 
 <script>
-  function decrease() {
-    let val = document.querySelector(".val");
-    if(parseInt(val.value) > parseInt(val.min)) {
-      val.value = parseInt(val.value) - 1;
-    }
-    return val;
+
+// Counter for Instagram
+
+function decrease() {
+  let val = document.querySelector(".insta_stories");
+  if(parseInt(val.value) > parseInt(val.min)) {
+    val.value = parseInt(val.value) - 1;
   }
-  function increase() {
-    let val = document.querySelector(".val");
-    if(parseInt(val.value) < parseInt(val.max)) {
-      val.value = parseInt(val.value) + 1;
-    }
-    return val;
+  return val;
+}
+function increase() {
+  let val = document.querySelector(".insta_stories");
+  if(parseInt(val.value) < parseInt(val.max)) {
+    val.value = parseInt(val.value) + 1;
   }
+  return val;
+}
+
+
+function decrease2() {
+  let val = document.querySelector(".insta_posts");
+  if(parseInt(val.value) > parseInt(val.min)) {
+    val.value = parseInt(val.value) - 1;
+  }
+  return val;
+}
+function increase2() {
+  let val = document.querySelector(".insta_posts");
+  if(parseInt(val.value) < parseInt(val.max)) {
+    val.value = parseInt(val.value) + 1;
+  }
+  return val;
+}
+
+// Counter for Youtube
+
+function decrease3() {
+  let val = document.querySelector(".youtube_vids");
+  if(parseInt(val.value) > parseInt(val.min)) {
+    val.value = parseInt(val.value) - 1;
+  }
+  return val;
+}
+
+function increase3() {
+  let val = document.querySelector(".youtube_vids");
+  if(parseInt(val.value) < parseInt(val.max)) {
+    val.value = parseInt(val.value) + 1;
+  }
+  return val;
+}
+
+function decrease4() {
+  let val = document.querySelector(".youtube_refs");
+  if(parseInt(val.value) > parseInt(val.min)) {
+    val.value = parseInt(val.value) - 1;
+  }
+  return val;
+}
+function increase4() {
+  let val = document.querySelector(".youtube_refs");
+  if(parseInt(val.value) < parseInt(val.max)) {
+    val.value = parseInt(val.value) + 1;
+  }
+  return val;
+}
+
 </script>

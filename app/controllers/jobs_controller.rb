@@ -4,6 +4,8 @@ class JobsController < ApplicationController
 
   def new
     @job = Job.new
+    @user = current_user
+    @influencer = User.find(params[:influencer_id])
   end
 
   def show

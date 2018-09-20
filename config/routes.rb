@@ -13,9 +13,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :influencers, only: [:index, :show] do
-  end
-
-  resources :jobs, only: [:index, :show, :create, :new] do
-    resources :reviews, except: [:new, :show, :update]
+    resources :jobs, only: [:index, :show, :create, :new] do
+      resources :reviews, except: [:new, :show, :update]
+    end
   end
 end

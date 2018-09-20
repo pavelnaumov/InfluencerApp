@@ -8,7 +8,7 @@
         <li class="list-group-item"><em>Global Score: <%= @influencer.global_score %></em></li>
         <li class="list-group-item"><em>Location: <%= @influencer.location %></em></li>
       </ul>
-     <%= link_to "Create a proposal", new_job_path, class: "btn btn-primary btn-lg btn-block"  %>
+     <%= link_to "Create a proposal", new_influencer_job_path(@influencer.id), class: "btn btn-primary btn-lg btn-block"  %>
       </div>
     </div>
   </div>

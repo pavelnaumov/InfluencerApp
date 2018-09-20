@@ -13,7 +13,8 @@ User.create!(
   gender: "male",
   email:' jack@mail.com',
   password: 123456,
-  role: 0
+  role: 0,
+  media_type: 0
   )
 
 User.create!(
@@ -27,7 +28,8 @@ User.create!(
   gender: "male",
   email:' john@mail.com',
   password: 123456,
-  role: 0
+  role: 0,
+  media_type: 0
   )
 
 User.create!(
@@ -41,7 +43,8 @@ User.create!(
   gender: "male",
   email:' tom@mail.com',
   password: 123456,
-  role: 0
+  role: 0,
+  media_type: 0
   )
 
 User.create!(
@@ -55,7 +58,8 @@ User.create!(
   gender: "female",
   email:' kate@mail.com',
   password: 123456,
-  role: 0
+  role: 0,
+  media_type: 1
   )
 
 User.create!(
@@ -69,7 +73,8 @@ User.create!(
   gender: "female",
   email:' maria@mail.com',
   password: 123456,
-  role: 0
+  role: 0,
+  media_type: 1
   )
 
 User.create!(
@@ -83,7 +88,8 @@ User.create!(
   gender: "female",
   email:' rita@mail.com',
   password: 123456,
-  role: 0
+  role: 0,
+  media_type: 1
   )
 
 puts "finished creating influencers" 
