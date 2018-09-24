@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   resources :influencers, only: [:index, :show] do
     resources :jobs, only: [:index, :show, :create, :new] do
       resources :reviews, except: [:new, :show, :update]
-
-      resources :orders, only: [:show, :create] do
-        resources :payments, only: [:new, :create]
-      end
     end
+  end
+
+  resources :orders, only: [:show, :create, :new] do
+    resources :payments, only: [:new, :create]
   end
 end

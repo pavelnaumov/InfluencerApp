@@ -28,6 +28,8 @@ class JobsController < ApplicationController
     @job.client = @user # This defines the client that that belongs to the job
     @job.save
 
+    redirect_to new_order_path(@job)
+
     
 
   end
