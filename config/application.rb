@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module InfluencerApp
   class Application < Rails::Application
+    # config.autoload_paths += %W(#{config.root}/lib)
+    # config.autoload_paths << Rails.root.join('lib')
     config.generators do |generate|
           generate.assets false
           generate.helper false
