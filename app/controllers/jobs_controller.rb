@@ -28,12 +28,16 @@ class JobsController < ApplicationController
     @job.client = @user # This defines the client that that belongs to the job
     @job.save
 
+    redirect_to new_order_path(@job)
+
+    
+
   end
 
   private
 
   def job_params
-    params.require(:influencer_job).permit(:instagram_post, :instagram_story, :youtube_vid, :youtube_ref, :description )
+    params.require(:influencer_job).permit(:instagram_post, :instagram_story, :youtube_vid, :youtube_ref, :description, :price )
   end
 end
 

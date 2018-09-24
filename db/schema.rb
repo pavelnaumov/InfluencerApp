@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_20_131127) do
+ActiveRecord::Schema.define(version: 2018_09_24_212849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 2018_09_20_131127) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "media_type"
-    t.integer "price"
     t.string "content_type"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -38,7 +37,22 @@ ActiveRecord::Schema.define(version: 2018_09_20_131127) do
     t.integer "youtube_ref"
     t.integer "instagram_story"
     t.integer "instagram_post"
+    t.integer "price_cents", default: 0, null: false
+    t.string "job_title"
     t.index ["user_id"], name: "index_jobs_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "job_title"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "EUR", null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "influencer_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -77,5 +91,6 @@ ActiveRecord::Schema.define(version: 2018_09_20_131127) do
 
   add_foreign_key "categories", "users"
   add_foreign_key "jobs", "users"
+  add_foreign_key "orders", "users"
   add_foreign_key "reviews", "jobs"
 end
