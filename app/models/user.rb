@@ -9,12 +9,7 @@ class User < ApplicationRecord
 
   has_many :client_jobs, :class_name => "Job",
                          :foreign_key => :client_id                          
-
-  # has_many :jobs, foreign_key: "user_id"
-
-
-  
-
+                         
   enum role: [:influencer, :client]
   after_initialize :set_default_role, :if => :new_record?
 

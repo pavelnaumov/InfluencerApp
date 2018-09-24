@@ -5,7 +5,7 @@
       <!-- 
         Instagram divs  -->
         <% if @influencer.media_type == "instagram" %>
-        <%= simple_form_for Job.create ,:url => {:action => :create, :controller => :jobs} do |f| %>
+        <%= simple_form_for @job ,:url => {:action => :create, :controller => :jobs} do |f| %>
         <label for="formGroupExampleInput">Instagram Stories</label>
         <div class="form-actions">
           <i class="fas fa-minus" onclick="decrease()"></i>

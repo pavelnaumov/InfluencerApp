@@ -20,16 +20,20 @@ class JobsController < ApplicationController
   end
 
   def create
+    # Defining all the info here -- best practice
     @influencer = User.find(params[:influencer_id])
     @user = current_user
-    @influencer_job = Job.create!(job_params)
+    @job = Job.new(job_params)
+    @job.user = @influencer # This defines the influencer that belongs to the job
+    @job.client = @user # This defines the client that that belongs to the job
+    @job.save
 
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:job, :influencer_id )
+    params.require(:influencer_job).permit(:instagram_post, :instagram_story, :youtube_vid, :youtube_ref, :description )
   end
 end
 
