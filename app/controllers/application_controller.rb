@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
   # this allows us to configure the role of the user at the registration
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:role])
+        devise_parameter_sanitizer.permit(:sign_in, keys: [:first_name, :last_name, :email])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :password_confirmation]) 
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :current_password])
 
   end           
 end
