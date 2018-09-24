@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
 
  def create
   job = Job.find(params[:job_id])
-  order  = Order.create!(job_title: job.job_title, amount: job.price, state: 'pending', user: current_user)
+  influencer = job.user
+  order  = Order.create!(job_title: job.job_title, amount: job.price, state: 'pending', user: current_user, influencer_id: job.user.id)
 
   redirect_to new_order_payment_path(order)
 end
