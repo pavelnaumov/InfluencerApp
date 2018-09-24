@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= current_user.username %>'s jobs</h1>
+  <h1><%= current_user.first_name %>'s jobs</h1>
 
   <% @jobs.each do |job| %>
   <h3> <%= job.description %></h3>
