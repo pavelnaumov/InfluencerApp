@@ -5,24 +5,24 @@
       <!-- 
         Instagram divs  -->
         <% if @influencer.media_type == "instagram" %>
-        <%= simple_form_for Job.new ,:url => {:action => :create, :controller => :jobs} do |f| %>
+        <%= simple_form_for Job.create ,:url => {:action => :create, :controller => :jobs} do |f| %>
         <label for="formGroupExampleInput">Instagram Stories</label>
         <div class="form-actions">
           <i class="fas fa-minus" onclick="decrease()"></i>
-          <input name="job[instagram_story]" type="number" min="1" max="99" value="1" class="insta_stories" id="number" readonly>
+          <input name="influencer_job[instagram_story]" type="number" min="1" max="99" value="1" class="insta_stories" id="number" readonly>
           <i class="fas fa-plus" onclick="increase()"></i>
     
         </div>
         <label for="formGroupExampleInput">Instagram Posts</label>
         <div class="form-actions">
           <i class="fas fa-minus" onclick="decrease2()"></i>
-          <input name="job[instagram_post]" type="number" min="1" max="99" value="1" class="insta_posts" id="number" readonly>
+          <input name="influencer_job[instagram_post]" type="number" min="1" max="99" value="1" class="insta_posts" id="number" readonly>
           <i class="fas fa-plus" onclick="increase2()"></i>
     
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Job Description</label>
-          <textarea class="form-control" name="job[description]" rows="3"></textarea>
+          <textarea class="form-control" name="influencer_job[description]" rows="3"></textarea>
         </div>
         <button class="btn btn-success" type="submit"> Submit your Proposal</button>
       </div>

@@ -1,5 +1,13 @@
 class JobsController < ApplicationController
+
   def index
+    @user = current_user
+
+    if current_user.role == "client"
+      @jobs = current_user.client_jobs
+    else
+      @jobs = current_user.influencer_jobs
+    end
   end
 
   def new
@@ -14,12 +22,17 @@ class JobsController < ApplicationController
   def create
     @influencer = User.find(params[:influencer_id])
     @user = current_user
-    media_type = @influencer.media_type
-    user_id = @influencer.id
-    client_id = @user.id
-    job = Job.create!(media_type, :price, :content_type, :description, user_id, :youtube_vid, :youtube_ref, :instagram_story, :instagram_post, client_id)
+    @influencer_job = Job.create!(job_params)
+
+  end
+
+  private
+
+  def job_params
+    params.require(:job).permit(:job, :influencer_id )
   end
 end
+
 
 
 # TODO: Have to fix this -- make the forms and job creation working
