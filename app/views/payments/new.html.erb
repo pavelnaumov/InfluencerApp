@@ -1,4 +1,4 @@
-<h1>Purchase of teddy <%= @order.job_title %></h1>
+<h1>Purchase <%= @order.job_title %></h1>
 <%= form_tag order_payments_path(@order) do %>
   <article>
     <label class="amount">
