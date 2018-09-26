@@ -1,5 +1,6 @@
 <div class="container">
   <h1><%= current_user.first_name %>'s jobs</h1>
+  <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill %>
 
   <% @jobs.each do |job| %>
   <h3> <%= job.description %></h3>
