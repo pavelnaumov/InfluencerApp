@@ -1,13 +1,24 @@
-<h1>Influencers#index</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+<h1 class="text-center"> Our Influencers</h1>
+<div class="wrapper">
+  <div class="cards-container">
+    <div class="row">
       <% @influencers.each do |influencer| %>
-      <ul class="list-group">
-        <li class="list-group-item"><%= influencer.first_name %> <%= link_to "Show", influencer_path(influencer), class: "btn btn-primary" %></li>
-        <% end %>
-      </ul>
+      <div class="col-xs-12 col-sm-4 col-lg-4">
+        <div class="card">
+          <%= link_to influencer_path(influencer) do %>
+
+          <div class="card-picture"
+          style="background: url('<%= influencer.photo %>')">
+          <div class="card-title">
+            <p class="influencer-name text-center"><%= influencer.first_name %></p>
+          </div>
+          <div class="card-footer">
+            <p class="influencer-media_type text-center"><%= influencer.media_type %></p>
+          </div>
+        </div>
+      </div>
+
     </div>
+    <% end %>
+    <% end %>
   </div>
-</div>
