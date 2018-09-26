@@ -15,7 +15,9 @@ class User < ApplicationRecord
   enum role: [:influencer, :client]
   after_initialize :set_default_role, :if => :new_record?
 
-  enum media_type: [:instagram, :youtube]
+  enum media_type: [:instagram, :youtube, :both]
+
+  mount_uploader :photo, PhotoUploader
   
   def set_default_role
     self.role ||= :influencer

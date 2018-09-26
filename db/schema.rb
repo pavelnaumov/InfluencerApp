@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_24_212849) do
+ActiveRecord::Schema.define(version: 2018_09_26_145038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,9 @@ ActiveRecord::Schema.define(version: 2018_09_24_212849) do
     t.integer "global_score"
     t.string "photo"
     t.integer "media_type"
+    t.string "instagram_identifier"
+    t.string "youtube_identifier"
+    t.integer "number_of_followers"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
