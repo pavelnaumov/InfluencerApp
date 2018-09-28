@@ -9,9 +9,9 @@
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <%= f.input :role, as: :radio_buttons , collection: [[:client, "client"], [:influencer, "influencer"]], label_method: :second, value_method: :first %>
       <%= f.input :media_type, as: :radio_buttons, collection: [[:instagram, "instagram"], [:youtube, "youtube"], [:both, "both"]], label_method: :second, value_method: :first %>
-      <%= f.input :instagram_identifier, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :youtube_identifier, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :number_of_followers, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+      <%= f.input :instagram_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+      <%= f.input :youtube_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+      <%= f.input :number_of_followers, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
 
 
       <%= f.input :first_name, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
