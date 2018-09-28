@@ -1,8 +1,12 @@
 User.destroy_all
+Order.destroy_all
+Job.destroy_all
 
 puts "Finished cleaning"
 
 User.create!(
+  first_name: 'Jack', 
+  last_name: 'Daniels',
   username: "jack",
   photo: "https://randomuser.me/api/portraits/men/29.jpg",
   nif: "1234567",
@@ -14,10 +18,14 @@ User.create!(
   email:' jack@mail.com',
   password: 123456,
   role: 0,
-  media_type: 0
+  instagram_identifier: "jack1",
+  media_type: 0,
+  number_of_followers: 30000
   )
 
 User.create!(
+  first_name: 'John', 
+  last_name: 'Doe',
   username: "john",
   photo: "https://randomuser.me/api/portraits/men/26.jpg",
   nif: "1234567",
@@ -29,10 +37,14 @@ User.create!(
   email:' john@mail.com',
   password: 123456,
   role: 0,
-  media_type: 0
+  instagram_identifier: "johndoe",
+  media_type: 0,
+  number_of_followers: 50000
   )
 
 User.create!(
+  first_name: "Tomas" , 
+  last_name: "Miranda",
   username: "tom",
   photo: "https://randomuser.me/api/portraits/men/30.jpg",
   nif: "1234567",
@@ -44,10 +56,71 @@ User.create!(
   email:' tom@mail.com',
   password: 123456,
   role: 0,
-  media_type: 0
+  instagram_identifier: "tom.cat",
+  media_type: 0,
+  number_of_followers: 1000000
   )
 
 User.create!(
+  first_name:'Pavel', 
+  last_name:'Naumov',
+  username: "paul.naumov",
+  photo: "https://randomuser.me/api/portraits/men/29.jpg",
+  nif: "1234567",
+  location: "Lisbon",
+  age: 23,
+  influence_level: "High",
+  global_score: 100,
+  gender: "male",
+  email:' pavel@mail.com',
+  password: 123456,
+  role: 0,
+  instagram_identifier: "paul.naumov",
+  media_type: 0,
+  number_of_followers: 30000000
+  )
+
+User.create!(
+  first_name: 'Tiago', 
+  last_name: 'Ferrao',
+  username: "t.ferrao",
+  photo: "https://randomuser.me/api/portraits/men/26.jpg",
+  nif: "1234567",
+  location: "Porto",
+  age: 24,
+  influence_level: "High",
+  global_score: 120,
+  gender: "male",
+  email:' tiago@mail.com',
+  password: 123456,
+  role: 0,
+  instagram_identifier: "tiago_ferrao",
+  media_type: 0,
+  number_of_followers: 500000
+  )
+
+User.create!(
+  first_name: "Francisco" , 
+  last_name: "Carvalho",
+  username: "cisco",
+  photo: "https://randomuser.me/api/portraits/men/30.jpg",
+  nif: "1234567",
+  location: "Coimbra",
+  age: 26,
+  influence_level: "High",
+  global_score: 110,
+  gender: "male",
+  email:' cisco@mail.com',
+  password: 123456,
+  role: 0,
+  instagram_identifier: "cisco.c",
+  media_type: 0,
+  number_of_followers: 1000000
+  )
+
+User.create!(
+  first_name: "Kate" , 
+  last_name: "Upton" ,
   username: "kate",
   photo: "https://randomuser.me/api/portraits/women/68.jpg",
   nif: "1234567",
@@ -59,10 +132,14 @@ User.create!(
   email:' kate@mail.com',
   password: 123456,
   role: 0,
-  media_type: 1
+  media_type: 1,
+  youtube_identifier: "the_cool_kate",
+  number_of_followers: 1000245
   )
 
 User.create!(
+  first_name: "Mary", 
+  last_name: "Costa",
   username: "maria",
   photo: "https://randomuser.me/api/portraits/women/66.jpg",
   nif: "1234567",
@@ -74,10 +151,14 @@ User.create!(
   email:' maria@mail.com',
   password: 123456,
   role: 0,
-  media_type: 1
+  youtube_identifier: "maria's channel",
+  media_type: 1,
+  number_of_followers: 123456
   )
 
 User.create!(
+  first_name: "Rita" , 
+  last_name: "Skittles" ,
   username: "rita",
   photo: "https://randomuser.me/api/portraits/women/69.jpg",
   nif: "1234567",
@@ -89,7 +170,10 @@ User.create!(
   email:' rita@mail.com',
   password: 123456,
   role: 0,
-  media_type: 1
+  youtube_identifier: 'rita_the_great',
+  media_type: 1,
+  number_of_followers: 235156
+
   )
 
 puts "finished creating influencers" 
@@ -120,6 +204,8 @@ puts "Finished creating categories"
 puts "creating clients"
 
 User.create!(
+  first_name: "Joao", 
+  last_name: "Valerio",
   username: "valerio",
   nif: "223344",
   location: "Lisbon",
@@ -130,6 +216,8 @@ User.create!(
   )
 
 User.create!(
+  first_name: "Joao", 
+  last_name: "Viana",
   username: "joao",
   nif: "253344",
   location: "Porto",
@@ -140,6 +228,8 @@ User.create!(
   )
 
 User.create!(
+  first_name: "Paulo" , 
+  last_name: "Mendes",
   username: "paulo",
   nif: "235344",
   location: "Coimbra",
@@ -150,6 +240,8 @@ User.create!(
   )
 
 User.create!(
+  first_name: "Joana", 
+  last_name: "Reis",
   username: "joana",
   nif: "263344",
   location: "Lisbon",
@@ -161,6 +253,8 @@ User.create!(
 
 
 User.create!(
+  first_name: "Monica" , 
+  last_name: "Cabral",
   username: "monica",
   nif: "264362",
   location: "Porto",
@@ -172,6 +266,8 @@ User.create!(
 
 
 User.create!(
+  first_name: "Shannon" , 
+  last_name: "Pires",
   username: "shannon",
   nif: "663321",
   location: "Coimbra",
