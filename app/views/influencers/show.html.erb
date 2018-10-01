@@ -1,22 +1,47 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <ul class="list-group">
-        <li class="list-group-item"><em>Username:<%= @influencer.username %></em>, <%= @influencer.role %></li>
-        <li class="list-group-item"><em>Age:<%= @influencer.age %></em></li>
-        <li class="list-group-item"><em>Influence Level:<%= @influencer.influence_level %></em></li>
-        <li class="list-group-item"><em>Global Score: <%= @influencer.global_score %></em></li>
-        <li class="list-group-item"><em>Location: <%= @influencer.location %></em></li>
-        <li class="list-group-item"><em>Find the influencer on <%= @influencer.media_type %>
-        <% if @influencer.media_type == "instagram" %>
-        <%= @influencer.instagram_identifier %>
-        <% else %>
-        <%= @influencer.youtube_identifier %>
-          <% end %>
-        </em></li>
-        <li class="list-group-item"><em>Number of followers: <%= @influencer.number_of_followers %></em></li>        
-      </ul>
-     <%= link_to "Create a proposal", new_influencer_job_path(@influencer.id), class: "btn btn-primary btn-lg btn-block"  %>
+  <div class="left-section">
+    <% if @influencer.photo.model[:photo] == nil %>
+    <div class="picture-show">
+      <%= image_tag "http://s3.amazonaws.com/37assets/svn/765-default-avatar.png", size: "350x500", crop: :fill %>
+      <% else %>
+      <div class="picture-show">
+        <%= cl_image_tag @influencer.photo, height: 500, width: 350 %>
       </div>
+      <% end %>
     </div>
   </div>
+
+  <div class="right-section">
+    <div id="influencer-name">
+      <h1 class="text-center"> <%= @influencer.first_name %> <%= @influencer.last_name %></h1> <br />
+      
+    </div>
+
+    <div id="social-media-identifier">
+      <% if @influencer.media_type == "Instagram" %>
+      <h3 class="text-center">Find the influencer on <%= @influencer.media_type %>: <%= @influencer.instagram_identifier %></h3>
+      <% else %>
+      <h3 class="text-center">Find the influencer on <%= @influencer.media_type %>: <%= @influencer.youtube_identifier %></h3>
+      <h3 class="text-center">Followers: <%= @influencer.number_of_followers %></h3>
+      <% end %>
+    </div>
+
+
+    <div id="influencer-influencer-levels">
+      <h3 class="text-center"> Influence level: <%= @influencer.influence_level %></h3>
+      <h3 class="text-center"> Global Score: <%= @influencer.global_score %> </h3>
+    </div>
+
+    <div id="influencer-misc">
+      <h3 class="text-center">Age: <%= @influencer.age %></h3>
+      <h3 class="text-center">Location: <%= @influencer.location %></h3>
+    </div>
+    <div class="proceed">
+      <div class="button-submit">
+       <%= link_to "Create a proposal", new_influencer_job_path(@influencer.id), class: "button-submit"  %>
+     </div>
+   </div>
+ </div>
+</div>
+
+
+

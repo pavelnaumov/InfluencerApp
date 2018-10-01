@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container-job">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-4">
-      <h1> Proposal for <%= @influencer.username %></h1>
+    <div class="job-header">
+      <h1 class="text-center"> Proposal for <%= @influencer.first_name %></h1></br></br>
+    </div>
       <!-- 
         Instagram divs  -->
         <% if @influencer.media_type == "instagram" %>
@@ -13,31 +14,35 @@
           <i class="fas fa-plus" onclick="increase()"></i>
 
         </div>
-        <label for="formGroupExampleInput">Instagram Posts</label>
+        <label for="formGroupExampleInput">Instagram Posts</label></br>
         <div class="form-actions">
           <i class="fas fa-minus" onclick="decrease2()"></i>
           <input name="influencer_job[instagram_post]" type="number" min="1" max="99" value="1" class="insta_posts" id="number" readonly>
           <i class="fas fa-plus" onclick="increase2()"></i>
+        </br>
+      </br>
 
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Job Description</label>
-          <textarea class="form-control" name="influencer_job[description]" rows="3"></textarea>
-        </div>
-        <button class="btn btn-success" type="submit"> Submit your Proposal</button>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Job Description</label>
+        <textarea class="form-control" name="influencer_job[description]" rows="3"></textarea>
       </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Price </span>
-        </div>
-        <input type="text" class="form-control" name="influencer_job[price]" >
-        <div class="input-group-append">
-          <span class="input-group-text"></span>
-        </div>
+    </br>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Price </span>
       </div>
-      <% end %>
-      <% end %>
+      <input type="text" class="form-control" name="influencer_job[price]" >
+      <div class="input-group-append">
+      </br>
+      <span class="input-group-text"></span>
+    </div>
+  </div>
+</br>
+</br>
+</div>
+</div>
+<% end %>
+<% end %>
 <!-- 
   Youtube divs  -->
 
@@ -46,34 +51,38 @@
   <label for="formGroupExampleInput">YouTube Videos</label>
   <div class="form-actions">
     <i class="fas fa-minus" onclick="decrease3()"></i>
-    <input name="job[youtube_vid]" type="number" min="1" max="99" value="1" class="youtube_vids" id="number" readonly>
+    <input name="influencer_job[youtube_vid]" type="number" min="1" max="99" value="1" class="youtube_vids" id="number" readonly>
     <i class="fas fa-plus" onclick="increase3()"></i>
 
   </div>
   <label for="formGroupExampleInput">YouTube References</label>
   <div class="form-actions">
     <i class="fas fa-minus" onclick="decrease4()"></i>
-    <input name="job[youtube_ref]" type="number" min="1" max="99" value="1" class="youtube_refs" id="number" readonly>
+    <input name="influencer_job[youtube_ref]" type="number" min="1" max="99" value="1" class="youtube_refs" id="number" readonly>
     <i class="fas fa-plus" onclick="increase4()"></i>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Job Description</label>
-      <textarea class="form-control" name="job[description]" rows="3"></textarea>
-    </div>
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Price </span>
-      </div>
-      <input type="text" class="form-control" name="influencer_job[price]" >
-      <div class="input-group-append">
-        <span class="input-group-text"></span>
-      </div>
-    </div>
-    <button class="btn btn-success" type="submit"> Submit your Proposal</button>
+  </br>
+</br>
+<div class="form-group">
+  <label for="exampleFormControlTextarea1">Job Description</label>
+  <textarea class="form-control" name="influencer_job[description]" rows="3"></textarea>
+</div>
+</br>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Price </span>
   </div>
-  <% end %>
-  <% end %>
-
-
+  <input type="text" class="form-control" name="influencer_job[price]" >
+  <div class="input-group-append">
+  </br>
+  <span class="input-group-text"></span>
+</div>
+</div>
+</br>
+</br>
+</div>
+<button class="button-propose" type="submit"> Submit your Proposal</button>
+<% end %>
+<% end %>
 </div>
 </div>
 </div>

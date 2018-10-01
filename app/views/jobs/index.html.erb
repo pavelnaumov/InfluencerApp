@@ -8,9 +8,11 @@
   <h3> <%= job.description %></h3>
   <h3> Instagram Stories: <%= job.instagram_story %></h3>
   <h3> Instagram Posts: <%= job.instagram_post %>
-  </h3>
-  <h3> Price paid: <%= humanized_money_with_symbol(job.price) %></h3>
+    <h3> Youtube Vids: <%= job.youtube_vid %></h3>
+    <h3> Youtube Refs: <%= job.youtube_ref %>
+    </h3>
+    <h3> Price paid: <%= humanized_money_with_symbol(job.price) %></h3>
 
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
