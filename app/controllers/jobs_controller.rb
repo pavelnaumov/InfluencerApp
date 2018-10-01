@@ -17,6 +17,9 @@ class JobsController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @job = @user.client_jobs.find(params[:id])
+    @influencer = @job.user
   end
 
   def create

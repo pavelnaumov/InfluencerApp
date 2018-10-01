@@ -1,18 +1,1 @@
-<div class="container">
-  <h1><%= current_user.first_name %>'s jobs</h1>
-  <% if current_user.photo? %>
-  <%= cl_image_tag current_user.photo, height: 300, width: 400, crop: :fill %>
-  <% end %>
-
-  <% @jobs.each do |job| %>
-  <h3> <%= job.description %></h3>
-  <h3> Instagram Stories: <%= job.instagram_story %></h3>
-  <h3> Instagram Posts: <%= job.instagram_post %>
-    <h3> Youtube Vids: <%= job.youtube_vid %></h3>
-    <h3> Youtube Refs: <%= job.youtube_ref %>
-    </h3>
-    <h3> Price paid: <%= humanized_money_with_symbol(job.price) %></h3>
-
-    <% end %>
-  </div>
-
+<%= render 'shared/my_jobs' %>

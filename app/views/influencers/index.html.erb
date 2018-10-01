@@ -11,10 +11,10 @@
           <div class="card-picture"
           style="background: url('<%= influencer.photo %>')">
           <div class="card-title">
-            <p class="influencer-name text-center"><%= influencer.first_name %></p>
+            <p class="influencer-name text-center"><%= influencer.first_name.titleize %></p>
           </div>
           <div class="card-footer">
-            <p class="influencer-mediatype"><%= influencer.media_type %> <br />
+            <p class="influencer-mediatype"><%= influencer.media_type.titleize %> <br />
               <%= influencer.number_of_followers %> followers</p>
             </div>
           </div>
