@@ -13,4 +13,22 @@ class InfluencersController < ApplicationController
   def show
     @influencer = User.find(params[:id])
   end
+
+## Methods and routes for different categories of influencers
+
+  def baby_boomers
+  @influencers = User.all.where(role: 0, target_generation: 'baby_boomer')
+  end
+
+  def generation_x
+  @influencers = User.all.where(role: 0, target_generation: 'generation_x')
+  end
+
+  def millennials
+  @influencers = User.all.where(role: 0, target_generation: 'millennial')
+  end
+
+  def generation_z
+  @influencers = User.all.where(role: 0, target_generation: 'generation_z')
+  end
 end

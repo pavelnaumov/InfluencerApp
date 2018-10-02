@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   enum media_type: [:instagram, :youtube, :both]
 
+  enum target_generation: [:baby_boomer, :generation_x, :millennial, :generation_z]
+
   mount_uploader :photo, PhotoUploader
 
 
