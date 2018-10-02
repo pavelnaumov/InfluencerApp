@@ -7,13 +7,13 @@
 
 label {
   color: $my-gray;
-  font-family: "Lato", "sans-serif";
+  font-family: $main-font;
   font-size: 24px;
   font-weight: 900;
 }
 
 .job-header h1 {
-  font-family: "Lato", "sans-serif";
+  font-family: $main-font;
   color: $my-gray;
   font-size: 48px;
   font-weight: 900;
@@ -62,20 +62,20 @@ input {
 }
 
 .container-my-jobs h1 {
-  font-family: "Lato", "sans-serif";
+  font-family: $main-font;
   font-size: 56px;
   color: $my-gray;
 }
 
 .container-my-jobs h3 {
-  font-family: "Lato", "sans-serif";
+  font-family: $main-font;
   font-size: 30px;
   font-weight: 700;
   color: $my-gray;
 }
 
 .my-orders-header h1 {
- font-family: "Lato", "sans-serif";
+ font-family: $main-font;
  font-size: 30px;
  font-weight: 700;
  color: $my-gray;

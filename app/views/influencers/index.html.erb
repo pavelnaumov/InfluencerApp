@@ -1,30 +1,45 @@
-<div class="wrapper">
-  <%= render 'shared/search_bar' %>
-  <div class="cards-container">
-    <div class="cards-container">
+<div class="container">
+  <div class="wrapper">
+    <div class="cards-container-my-orders">
       <div class="row">
-        <div class="influencer-header">
-          <h1 class="text-center">Our Influencers</h1>
+        <div class="target-header">
+          <h1 class="text-center">Who do you want to target?</h1>
         </div>
-        <% @influencers.each do |influencer| %>
-        <div class="col-xs-12 col-sm-4 col-lg-4">
-          <div class="card">
-            <%= link_to influencer_path(influencer) do %>
-            <div class="card-picture"
-            style="background: url('<%= influencer.photo %>')">
-            <div class="card-title">
-              <p class="influencer-name text-center"><%= influencer.first_name.titleize %></p>
-            </div>
-            <div class="card-footer">
-              <p class="influencer-mediatype"><%= influencer.media_type.titleize %> <br />
-                <%= influencer.number_of_followers %> Followers</p>
+        <% @generations.each do |generation| %>
+        <div class="col-xs-12 col-sm-4 col-lg-3">
+          <div class="target-card">
+            <div class="target-card-picture">
+              <div class="target-card-title">
+                <% if generation[0] == 'baby_boomer' %>
+                <h3>Baby Boomers</h3> 
+                <% elsif generation[0] == 'generation_x' %>
+                <h3> Generation X</h3>
+                <% elsif generation[0] == 'millennial' %>
+                <h3> Millennials </h3>
+                <% else %>
+                <h3> Generation Z</h3>
+                <% end %>
+                <p class="influencer-name text-center"></p>
+              </div>
+              <div class="target-card-footer">
+
+                <% if generation[0] == 'baby_boomer' %>
+                <%= link_to("Select", "/baby_boomers" , class: 'button-target') %>
+                <% elsif generation[0] == 'generation_x' %>
+                <%= link_to("Select", "/generation_x" , class: 'button-target') %>
+                <% elsif generation[0] == 'millennial' %>
+                <%= link_to("Select", "/millennials" , class: 'button-target') %>
+                <% else %>
+                <%= link_to("Select", "/generation_z" , class: 'button-target') %>
+                <% end %>
               </div>
             </div>
           </div>
-
         </div>
-        <% end %>
         <% end %>
       </div>
     </div>
 
+
+
+    <%= render 'shared/search_bar' %>

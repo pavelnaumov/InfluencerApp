@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: 'pages#home'
+  root to: 'influencers#index'
 
   get '/my_jobs', to: 'jobs#index'
   get '/baby_boomers', to: 'influencers#baby_boomers'

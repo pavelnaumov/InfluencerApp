@@ -1,6 +1,5 @@
-
-.cards-container {
-  height: 100%;
+.target-cards-container {
+ height: 100%;
   // width: 100vw;
   padding: 0;
   margin: 0;
@@ -10,24 +9,25 @@
   // width: 90vw;
 }
 
-.cards-container-mobile {
-  height: 100%;
-  width: 100vw;
-  padding: 30px;
-  margin: 0;
-  flex-grow: 1;
-}
 
-.cards-container-tablet {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  flex-grow: 1;
+.target-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
-.card{
+
+.target-header h1 {
+  color: $my-gray;
+  font-family: $main-font;
+  font-size: 56px;
+  font-weight: 900;
+}
+
+
+.target-card {
  // overflow: hidden;
  color: #333333;
  height: 400px;
@@ -40,15 +40,11 @@
  justify-content: center;
  &:hover {
   box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.2);
-  }
+}
 }
 
 
-.card a {
-  text-decoration: none;
-}
-
-.card-picture {
+.target-card-picture {
   width: 200px;
   height: 200px;
   background-size: cover !important;
@@ -58,23 +54,26 @@
   border-radius: 50%;
   top: 55px;
   transition: 0.6s;
-  &:hover {
-    opacity: 0.8;
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
-    box-shadow: 1px 2px 2px 1px rgba(0,0,0,0.2);
-
-  }
 }
 
-.card-title{
+
+
+.target-card-title {
   padding: 0 5%;
   height: 20%;
   position: relative;
-  top: -55px;
-
+  top: 70px;
+  font-family: $main-font;
+  font-weight: 900;
 }
 
-.card-title p{
+
+.target-card-title h3{
+  font-family: $main-font;
+  font-weight: 700;
+}
+
+.target-card-title p{
   margin: 0;
   padding: 5% 0;
   color: $my-gray;
@@ -87,7 +86,10 @@
   
 }
 
-.card-footer {
+
+
+
+.target-card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,7 +100,7 @@
   padding-top: 250px;
 }
 
-.card-footer p{
+.target-card-footer p{
   font-size: 20px;
   margin: 0;
   padding: 0;

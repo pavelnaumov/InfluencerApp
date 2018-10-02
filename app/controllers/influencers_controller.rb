@@ -1,6 +1,7 @@
 class InfluencersController < ApplicationController
 
   def index
+    @generations = User.target_generations
     if params[:query].present?
       sql_query = "username ILIKE :query OR cast(media_type as text) ILIKE :query OR content_type ILIKE :query"
       # @influencers = User.all.where(sql_query, query: "%#{params[:query]}%")
@@ -16,19 +17,19 @@ class InfluencersController < ApplicationController
 
 ## Methods and routes for different categories of influencers
 
-  def baby_boomers
+def baby_boomers
   @influencers = User.all.where(role: 0, target_generation: 'baby_boomer')
-  end
+end
 
-  def generation_x
+def generation_x
   @influencers = User.all.where(role: 0, target_generation: 'generation_x')
-  end
+end
 
-  def millennials
+def millennials
   @influencers = User.all.where(role: 0, target_generation: 'millennial')
-  end
+end
 
-  def generation_z
+def generation_z
   @influencers = User.all.where(role: 0, target_generation: 'generation_z')
-  end
+end
 end
