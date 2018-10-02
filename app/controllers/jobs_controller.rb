@@ -2,7 +2,6 @@ class JobsController < ApplicationController
 
   def index
     @user = current_user
-
     if current_user.role == "client"
       @jobs = current_user.client_jobs
     else
