@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_114434) do
+ActiveRecord::Schema.define(version: 2018_10_02_150830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,6 +90,10 @@ ActiveRecord::Schema.define(version: 2018_10_02_114434) do
     t.integer "number_of_followers"
     t.string "content_type"
     t.integer "target_generation"
+    t.integer "youtube_vid_price"
+    t.integer "youtube_ref_price"
+    t.integer "instagram_post_price"
+    t.integer "instagram_story_price"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
