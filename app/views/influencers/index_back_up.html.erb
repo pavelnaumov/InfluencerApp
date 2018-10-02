@@ -1,0 +1,116 @@
+<div class="wrapper">
+  <%= render 'shared/search_bar' %>
+  <div class="cards-container">
+    <div class="cards-container">
+      <div class="row">
+        <div class="influencer-header">
+          <h1 class="text-center">Our Influencers</h1>
+        </div>
+        <% @influencers.each do |influencer| %>
+        <div class="col-xs-12 col-sm-4 col-lg-4">
+          <div class="card">
+            <%= link_to influencer_path(influencer) do %>
+            <div class="card-picture"
+            style="background: url('<%= influencer.photo %>')">
+            <div class="card-title">
+              <p class="influencer-name text-center"><%= influencer.first_name.titleize %></p>
+            </div>
+            <div class="card-footer">
+              <p class="influencer-mediatype"><%= influencer.media_type.titleize %> <br />
+                <%= influencer.number_of_followers %> Followers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
+
+
+
+    <!-- Do not use -- it is simply a back-up -->
+
+
+
+
+
+    <!-- BACKUP OF THE BACKUP -->
+    <div class="wrapper">
+      <%= render 'shared/search_bar' %>
+      <div class="target-cards-container">
+        <div class="row">
+          <div class="target-header">
+            <h1 class="text-center"> Who do you want to reach?</h1>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-lg-3">
+
+            <!-- Card 1 -->
+            <div class="target-card">
+              <div class="target-card-picture"
+              style="background: url('')">
+              <div class="target-card-title">
+                <h1 class="text-center"> Baby Boomers</h1>
+                <p class="influencer-name text-center"></p>
+              </div>
+              <div class="target-card-footer">
+                <p class="influencer-mediatype"><br />
+                Followers</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card">
+            <div class="card-picture"
+            style="background: url('')">
+            <div class="card-title">
+              <h1 class="text-center"> Generation X</h1>
+              <p class="influencer-name text-center"></p>
+            </div>
+            <div class="card-footer">
+              <p class="influencer-mediatype"> <br />
+              Followers</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Card 3 -->
+
+        <div class="card">
+          <div class="card-picture"
+          style="background: url('')">
+          <div class="card-title">
+            <h1 class="text-center"> Millennials</h1>
+            <p class="influencer-name text-center"></p>
+          </div>
+          <div class="card-footer">
+            <p class="influencer-mediatype"> <br />
+            Followers</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Card 4 -->
+
+      <div class="card">
+        <div class="card-picture"
+        style="background: url('')">
+        <div class="card-title">
+          <h1 class="text-center"> Generation Z</h1>
+          <p class="influencer-name text-center"></p>
+        </div>
+        <div class="card-footer">
+          <p class="influencer-mediatype"> <br />
+          Followers</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
