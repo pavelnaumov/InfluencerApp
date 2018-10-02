@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <%= render 'shared/search_bar' %>
+  <div class="cards-container">
+    <div class="cards-container">
+      <div class="row">
+        <div class="influencer-header">
+          <h1 class="text-center">Our Influencers</h1>
+        </div>
+        <% @influencers.each do |influencer| %>
+        <div class="col-xs-12 col-sm-4 col-lg-4">
+          <div class="card">
+            <%= link_to influencer_path(influencer) do %>
+            <div class="card-picture"
+            style="background: url('<%= influencer.photo %>')">
+            <div class="card-title">
+              <p class="influencer-name text-center"><%= influencer.first_name.titleize %> <%= influencer.last_name.titleize %></p>
+            </div>
+            <div class="card-footer">
+              <p class="influencer-mediatype"><%= influencer.media_type.titleize %> <br />
+                <%= influencer.number_of_followers %> Followers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>

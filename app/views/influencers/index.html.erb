@@ -1,9 +1,11 @@
 <div class="container">
   <div class="wrapper">
     <div class="cards-container-my-orders">
+      <%= render 'shared/search_bar' %>
       <div class="row">
         <div class="target-header">
           <h1 class="text-center">Who do you want to target?</h1>
+
         </div>
         <% @generations.each do |generation| %>
         <div class="col-xs-12 col-sm-4 col-lg-3">
@@ -11,13 +13,13 @@
             <div class="target-card-picture">
               <div class="target-card-title">
                 <% if generation[0] == 'baby_boomer' %>
-                <h3>Baby Boomers</h3> 
+                <h3 class="text-center">Baby Boomers</h3> 
                 <% elsif generation[0] == 'generation_x' %>
-                <h3> Generation X</h3>
+                <h3 class="text-center"> Generation X</h3>
                 <% elsif generation[0] == 'millennial' %>
-                <h3> Millennials </h3>
+                <h3 class="text-center"> Millennials </h3>
                 <% else %>
-                <h3> Generation Z</h3>
+                <h3 class="text-center"> Generation Z</h3>
                 <% end %>
                 <p class="influencer-name text-center"></p>
               </div>
@@ -42,4 +44,3 @@
 
 
 
-    <%= render 'shared/search_bar' %>
