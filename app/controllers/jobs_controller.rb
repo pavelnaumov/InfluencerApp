@@ -17,6 +17,14 @@ class JobsController < ApplicationController
   end
 
   def show
+    @user = current_user
+    if @user.role == "influencer"
+      @job = @user.influencer_jobs.find(params[:id])
+    else
+      @job = @user.client_jobs.find(params[:id])
+      @influencer = @job.user
+      @client = @job.client
+    end
   end
 
   def create

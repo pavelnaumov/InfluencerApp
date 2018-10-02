@@ -1,4 +1,27 @@
-<h1 class="text-center"> Order Confirmation</h1>
-<h2>Thank you for your purchase</h2>
-
-<p><%= link_to 'My Jobs', my_jobs_path, class:"btn btn-success" %></p>
+<div class="container-confirmation">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <h1 class="text-center">Thank you for your order!</h1>
+    <h2 class="text-center">
+    </br>
+  </br>
+  Influencer's name: <%= @influencer.first_name %> <%= @influencer.last_name %>
+</h2>
+<div class="order-body">
+  <% if @influencer.media_type == 'youtube' %>
+  <h3 class="text-center"> Youtube Videos: <%= @job.youtube_vid %></h3>
+  <h3 class="text-center"> Youtube References: <%= @job.youtube_ref %></h3>
+  <% else %>
+  <h3 class="text-center"> Instagram Posts: <%= @job.instagram_post %></h3>
+  <h3 class="text-center"> Instagram Stories: <%= @job.instagram_story %></h3>
+  <% end %>
+  <h3 class="text-center"> Description: <%= @job.description %></h3>
+  <h3 class="text-center"> Price: <%= humanized_money_with_symbol(@job.price) %></h3>
+</div>
+</br>
+</br>
+</br>
+<div class="button-jobs">
+  <%= link_to 'My Jobs', my_jobs_path, class:"button-confirm-jobs" %>
+</div>
+</div>
+</div>

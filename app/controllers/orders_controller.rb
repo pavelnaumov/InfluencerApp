@@ -2,11 +2,20 @@ class OrdersController < ApplicationController
 
   def new
     @job = Job.last
-    @order = Order.new
+    @user = current_user
+    @influencer = @job.user
+    @job.user = @influencer
+    @job.client = @user
+    @order  = Order.create!(job_title: @job.job_title, amount: @job.price, state: 'pending', user: current_user, influencer_id: @job.user.id)
   end
 
   def show
    @order = current_user.orders.where(state: 'paid').find(params[:id])
+   @job = Job.last
+   @user = current_user
+   @influencer = @job.user
+   @job.user = @influencer
+   @job.client = @user
  end
 
  def create

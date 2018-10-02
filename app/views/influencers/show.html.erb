@@ -18,9 +18,9 @@
 
     <div id="social-media-identifier">
       <% if @influencer.media_type == "Instagram" %>
-      <h3 class="text-center">Find the influencer on <%= @influencer.media_type %>: <%= @influencer.instagram_identifier %></h3>
+      <h3 class="text-center">Find the influencer on <%= @influencer.media_type.titleize %>: <%= @influencer.instagram_identifier %></h3>
       <% else %>
-      <h3 class="text-center">Find the influencer on <%= @influencer.media_type %>: <%= @influencer.youtube_identifier %></h3>
+      <h3 class="text-center">Find the influencer on <%= @influencer.media_type.titleize %>: <%= @influencer.youtube_identifier %></h3>
       <h3 class="text-center">Followers: <%= @influencer.number_of_followers %></h3>
       <% end %>
     </div>

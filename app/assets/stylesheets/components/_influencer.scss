@@ -1,9 +1,17 @@
+.influencer-header h1 {
+  font-family: "Lato", "sans-serif";
+  font-weight: 700;
+  font-size: 48px;
+  color: $my-gray;
+  margin-left: -35px;
+}
+
 .picture-show {
   margin-top: 50px;
 }
 
 .left-section{
-  margin-left: 40px;
+  // margin-left: 40px;
   width: 50%;
   height: 80vh;
   float: left;
