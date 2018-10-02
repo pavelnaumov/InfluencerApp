@@ -33,6 +33,7 @@ input {
  font-size: 24px;
  color: $my-gray;
  font-weight: 900;
+ border-radius: 15;
 }
 
 .input-group-prepend {
@@ -71,6 +72,14 @@ input {
   font-size: 30px;
   font-weight: 700;
   color: $my-gray;
+}
+
+.my-orders-header h1 {
+ font-family: "Lato", "sans-serif";
+ font-size: 30px;
+ font-weight: 700;
+ color: $my-gray;
+ font-size: 56px;
 }
 
 
