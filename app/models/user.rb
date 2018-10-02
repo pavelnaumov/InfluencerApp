@@ -11,7 +11,7 @@ class User < ApplicationRecord
   :foreign_key => :client_id 
 
   has_many :orders                         
-  
+
   enum role: [:influencer, :client]
   after_initialize :set_default_role, :if => :new_record?
 
@@ -26,8 +26,6 @@ class User < ApplicationRecord
   using: {
     tsearch: { prefix: true }
   }
-
-
 
 
   def set_default_role

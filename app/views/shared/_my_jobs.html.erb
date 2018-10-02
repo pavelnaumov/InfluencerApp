@@ -1,6 +1,5 @@
 <div class="container">
-  </div>
-
+  <% if current_user.role == "client"  %>
   <div class="wrapper">
     <div class="cards-container-my-orders">
       <div class="row">
@@ -21,8 +20,41 @@
               </div>
             </div>
           </div>
-
         </div>
         <% end %>
         <% end %>
+        <% end %>
       </div>
+    </div>
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+
+<% if current_user.role == "influencer"  %>
+<div class="wrapper">
+  <div class="cards-container-my-orders">
+    <div class="row">
+      <div class="my-orders-header">
+        <h1 class="text-center">Your Orders</h1>
+      </div>
+      <% @jobs.each do |job| %>
+      <div class="col-xs-12 col-sm-4 col-lg-4">
+        <div class="card">
+          <%= link_to influencer_job_path(job, job.id) do %>
+          <div class="card-picture"
+          style="background: url('<%= job.client.photo %>')">
+          <div class="card-title">
+            <p class="influencer-name text-center"><%= job.client.first_name.titleize %> <%= job.client.last_name.titleize %></p>
+          </div>
+          <div class="card-footer">
+            <p class="influencer-mediatype"><%= job.user.media_type.titleize %> Content <br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+      <% end %>
+    </div>
+    

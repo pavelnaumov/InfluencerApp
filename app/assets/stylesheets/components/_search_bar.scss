@@ -1,0 +1,116 @@
+.search-influencers-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: black;
+  font-weight: 400;
+  margin-right: 50px;
+}
+
+.search-influencers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: black;
+} 
+
+.button-submit-container {
+  position: absolute;
+  margin-left: 260px;
+  margin-top: -39px;
+}
+
+.search-button {
+  width: 100px;
+  height: 40px;
+  border: 1px solid #276CF2;
+  background: #276CF2;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+}
+
+.form-control {
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  color: black;
+  background: lightgrey;
+  // border: 0.5px solid #276CF2;
+}
+
+// search mobile
+
+.search-gyms-wrapper-mobile {
+  width: 52vw;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  position: relative;
+  left: 55px;
+  top: 20px;
+
+}
+
+.search-gyms-mobile {
+  position: center;
+  margin: 0;
+  color: black;
+} 
+
+.search-button-mobile {
+  width: 80px;
+  height: 40px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 900;
+  right: -220px;
+  top: -40px;
+  position: relative;
+}
+
+// search bar tablet
+
+.search-gyms-wrapper-tablet {
+  width: 80vw;
+  border-radius: 0px;
+  font-size: 20px;
+  color: white;
+  font-weight: 700;
+  position: relative;
+  left: 30px;
+  top: 25px
+
+}
+
+.search-gyms-tablet {
+  position: center;
+  margin: 0;
+  color: black;
+} 
+
+.search-button-tablet {
+  width: 80px;
+  height: 40px;
+  border: 1px solid #276CF2;
+  background: #276CF2;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 900;
+  right: -630px;
+  top: -40px;
+  position: relative;
+}
+
