@@ -1,0 +1,11 @@
+<div class="search-influencers-wrapper">
+  <div class="search-influencers">
+    <%= form_tag influencers_path, method: :get do %>
+    <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+      placeholder: "Find an influencer" %>
+      <%= submit_tag "Find", class: "search-button" %>
+      <% end %>
+    </div>
+  </div>
