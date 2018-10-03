@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  resources :users, :only => [:show]
   root to: 'influencers#index'
 
   get '/my_jobs', to: 'jobs#index'
