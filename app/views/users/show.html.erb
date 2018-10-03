@@ -16,7 +16,7 @@
   <div class="profile-identifiers">
 
     <%= f.input :first_name, required: true, autofocus: true, readonly: true %>
-        <%= f.input :last_name, required: true, autofocus: true, readonly: true %>
+    <%= f.input :last_name, required: true, autofocus: true, readonly: true %>
 
     <%= f.input :email, required: true, autofocus: true, readonly: true %>
     <% if current_user.role == 'influencer' %>
