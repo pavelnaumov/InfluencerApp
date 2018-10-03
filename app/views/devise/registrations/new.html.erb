@@ -1,38 +1,49 @@
-<h2>Sign up</h2>
+<div class="wrapper">
+  <div class="container">
+    <h1 class="text-center">Sign up</h1>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= f.error_notification %>
-
-
-<div class="form-inputs">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <%= f.input :role, as: :radio_buttons , collection: [[:client, "client"], [:influencer, "influencer"]], label_method: :second, value_method: :first %>
-      <%= f.input :media_type, as: :radio_buttons, collection: [[:instagram, "instagram"], [:youtube, "youtube"], [:both, "both"]], label_method: :second, value_method: :first %>
-      <%= f.input :instagram_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :youtube_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :number_of_followers, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :content_type, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
 
+    <div class="form-inputs">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
 
-      <%= f.input :first_name, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :last_name, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :email, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
-      <%= f.input :password, required: true, placeholder: '••••••', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'},  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)%>
-      <%= f.input :password_confirmation, required: true, placeholder: '•••••', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}  %>
-      <hr>
-      <%= f.input :photo %>
-      <%= f.input :photo_cache, as: :hidden %>
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
+          <%= f.input :role, as: :radio_buttons , collection: [[:client, "Client"], [:influencer, "Influencer"]], label_method: :second, value_method: :first   %>
+        </br>
+      </br>
+
+      <div class="for-influencers">
+        <%= f.input :media_type, as: :radio_buttons, collection: [[:instagram, "Instagram"], [:youtube, "Youtube"]], label_method: :second, value_method: :first, hint: "Please ignore this field if you are a client" %>
+
+        <%= f.input :instagram_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
+        <%= f.input :youtube_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
+        <%= f.input :number_of_followers, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
+        <%= f.input :content_type, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
       </div>
-      <% end %>
+    </br>
+
+
+    <h2 class="text-center"> General Information </h2>
+    <%= f.input :first_name, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+    <%= f.input :last_name, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+    <%= f.input :email, required: true, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'} %>
+    <%= f.input :password, required: true, placeholder: '••••••', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'},  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)%>
+    <%= f.input :password_confirmation, required: true, placeholder: '•••••', input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}  %>
+    <hr>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", class: 'btn btn-success' %>
     </div>
-  </div>
+    <% end %>
+  </br>
+  <%= render "devise/shared/links" %>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
-
-
-<%= render "devise/shared/links" %>

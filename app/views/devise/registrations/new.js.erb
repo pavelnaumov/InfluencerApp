@@ -1,0 +1,26 @@
+// function(e) {
+//   var element = Event.element(e)
+//   var index = element.selectedIndex
+//   var option = element.options[index]
+
+//   if(option.value == "client")
+//     $('.for-influencers').hide()
+// }
+
+
+// $('.for-influencers').hide().after('<%= j render("index_complete") %>')
+
+
+
+
+
+$(document).ready(function(){
+  $(".form-check-input is-valid radio_buttons optional").click(function(){
+    $('.for-influencers').hide();
+  });
+});
+
+
+
+document.querySelector("[data-restaurant-id='<%= @restaurant.id %>']")
+  .remove();

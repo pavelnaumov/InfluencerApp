@@ -1,0 +1,28 @@
+.wrapper h1, h2 {
+  font-weight: 900;
+  color: $my-gray;
+  font-family: $main-font;
+}
+
+.wrapper  h2 {
+  font-weight: 700;
+  color: $my-gray;
+  font-family: $main-font;
+}
+
+
+legend {
+  font-weight: 700;
+  color: $my-gray;
+  font-family: $main-font;
+}
+
+.wrapper-index {
+  height: 100vh;
+}
+
+.all-influencers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

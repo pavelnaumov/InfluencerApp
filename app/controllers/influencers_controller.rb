@@ -2,6 +2,9 @@ class InfluencersController < ApplicationController
 
   def index
     @generations = User.target_generations
+  end
+
+  def index_complete
     if params[:query].present?
       sql_query = "username ILIKE :query OR cast(media_type as text) ILIKE :query OR content_type ILIKE :query"
       # @influencers = User.all.where(sql_query, query: "%#{params[:query]}%")

@@ -1,11 +1,10 @@
 <div class="container">
-  <div class="wrapper">
+  <div class="wrapper-index">
     <div class="cards-container-my-orders">
-      <%= render 'shared/search_bar' %>
+      <%#= render 'shared/search_bar' %>
       <div class="row">
         <div class="target-header">
           <h1 class="text-center">Who do you want to target?</h1>
-
         </div>
         <% @generations.each do |generation| %>
         <div class="col-xs-12 col-sm-4 col-lg-3">
@@ -41,6 +40,18 @@
         <% end %>
       </div>
     </div>
+  </div>
+</br>
+</br>
+</br>
 
-
-
+<h2 class="text-center"> Or take a look at all influencers available </h2>
+</br>
+</br>
+</br>
+<%= link_to "See all influencers", "/all_influencers", id: 'influencers', remote: true, class: 'btn btn-primary btn-lg btn-block' %>
+</br>
+</br>
+</br>
+</br>
+</br>
