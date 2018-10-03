@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :client_jobs, :class_name => "Job",
   :foreign_key => :client_id, dependent: :destroy
 
-  has_many :orders                         
+  has_many :orders, dependent: :destroy                        
 
   enum role: [:influencer, :client]
   after_initialize :set_default_role, :if => :new_record?

@@ -14,21 +14,28 @@
   <% end %>
   <h3 class="text-center"> Description: <%= @job.description %></h3>
   <h3 class="text-center"> Price Paid: <%= humanized_money_with_symbol(@job.price) %></h3>
+</br>
+</br>
 
-  <div class="go-back">
-   <%= link_to "Back to orders", :back, class: "button-go-back" %>
- </div>
+
+<div class="go-back">
+ <%= link_to "Back to orders", :back, class: "button-go-back" %>
 </div>
+</div>
+<div class="job-done">
+  <% if @job.completed? %>
+  <button class="btn btn-success" disabled> Job completed</button>
+  <% else %>
+  <button class="btn btn-danger" disabled> Work in Progress </button>
+  <% end %>
+</div>
+
 </br>
 </br>
 </br>
 </div>
 </div>
 <% end %>
-
-
-
-
 
 <% if current_user.role == "influencer" %>
 <div class="container-my-jobs">
@@ -46,14 +53,25 @@
   <% end %>
   <h3 class="text-center"> Description: <%= @job.description %></h3>
   <h3 class="text-center"> Price Received: <%= humanized_money_with_symbol(@job.price) %></h3>
+</br>
+</br>
 
-  <div class="go-back">
-   <%= link_to "Back to orders", :back, class: "button-go-back" %>
- </div>
+<div class="go-back">
+ <%= link_to "Back to orders", :back, class: "button-go-back" %>
+</div>
+
+<div class="job-done">
+  <% if !@job.completed? %>
+  <h3> Mark the job as completed </h3>
+  <%= link_to "Update Job Status", update_job_state_influencer_job_path(@job), method: :patch, class: 'btn btn-default' %>
+  <% else %>
+  <button class="btn btn-success" disabled> Job completed</button>
+  <% end %>
+</div>
 </div>
 </br>
 </br>
 </br>
-</div>
-</div>
 <% end %>
+
+<%# raise %>

@@ -11,10 +11,9 @@ Rails.application.routes.draw do
   get '/generation_z', to: 'influencers#generation_z'
 
 
-
-
   resources :influencers, only: [:index, :show, :baby_boomers, :generation_x, :millennials, :generation_z] do
     resources :jobs, only: [:index, :show, :create, :new] do
+          patch :update_job_state, on: :member
       resources :reviews, except: [:new, :show, :update]
     end
   end

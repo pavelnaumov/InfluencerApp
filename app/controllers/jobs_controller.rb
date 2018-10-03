@@ -26,6 +26,16 @@ class JobsController < ApplicationController
     end
   end
 
+  def update_job_state
+    @user = current_user
+    if @user.role == "influencer"
+      @job = @user.influencer_jobs.find(params[:id])
+      @job.update_attribute(:completed, true)
+    else
+      @job = @user.client_jobs.find(params[:id])
+    end
+  end
+
   def create
     # Defining all the info here -- best practice
     @influencer = User.find(params[:influencer_id])
@@ -38,20 +48,16 @@ class JobsController < ApplicationController
     if @influencer.media_type == "youtube"
       @job.price = (@influencer.youtube_vid_price * @job.youtube_vid) + (@influencer.youtube_ref_price * @job.youtube_ref)
     else
-      @ob.price = (@influencer.instagram_post_price * @job.instagram_post) + (@influencer.instagram_story_price * @job.instagram_story)
+      @job.price = (@influencer.instagram_post_price * @job.instagram_post) + (@influencer.instagram_story_price * @job.instagram_story)
     end
-      @job.save
+    @job.save
 
-      redirect_to new_order_path(@job)
-    end
-
-    private
-
-    def job_params
-      params.require(:influencer_job).permit(:instagram_post, :instagram_story, :youtube_vid, :youtube_ref, :description, :price )
-    end
+    redirect_to new_order_path(@job)
   end
 
+  private
 
-
-# TODO: Have to fix this -- make the forms and job creation working
+  def job_params
+    params.require(:influencer_job).permit(:instagram_post, :instagram_story, :youtube_vid, :youtube_ref, :description, :price )
+  end
+end
