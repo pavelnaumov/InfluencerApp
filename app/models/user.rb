@@ -15,7 +15,7 @@ class User < ApplicationRecord
   enum role: [:influencer, :client]
   after_initialize :set_default_role, :if => :new_record?
 
-  enum media_type: [:instagram, :youtube, :both]
+  enum media_type: [:instagram, :youtube]
 
   enum target_generation: [:baby_boomer, :generation_x, :millennial, :generation_z]
 

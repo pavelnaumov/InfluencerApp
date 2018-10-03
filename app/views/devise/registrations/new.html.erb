@@ -17,10 +17,17 @@
       <div class="for-influencers">
         <%= f.input :media_type, as: :radio_buttons, collection: [[:instagram, "Instagram"], [:youtube, "Youtube"]], label_method: :second, value_method: :first, hint: "Please ignore this field if you are a client" %>
 
+        <%= f.input :target_generation, as: :radio_buttons, collection: [[:baby_boomer, "Baby Boomers"], [:generation_x, "Generation X"], [:millennial, "Millennials"], [:generation_z, "Generation Z"]], label_method: :second, value_method: :first, hint: "Please ignore this field if you are a client" %>
+
         <%= f.input :instagram_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
+
         <%= f.input :youtube_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
+
         <%= f.input :number_of_followers, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
+        
         <%= f.input :content_type, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, hint: "Please ignore this field if you are a client" %>
+        
+
       </div>
     </br>
 
