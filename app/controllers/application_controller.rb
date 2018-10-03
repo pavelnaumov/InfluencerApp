@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:role, :media_type, :instagram_identifier, :youtube_identifier, :number_of_followers, :content_type])
     devise_parameter_sanitizer.permit(:sign_in, keys: [:first_name, :last_name, :email])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :photo]) 
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :current_password])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password, :password_confirmation, :current_password, :instagram_identifier, :youtube_identifier, :number_of_followers, :content_type, :youtube_vid_price , :youtube_ref_price, :instagram_post_price, :instagram_story_price])
   end           
 end
+
 

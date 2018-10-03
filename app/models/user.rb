@@ -5,10 +5,10 @@ class User < ApplicationRecord
   :recoverable, :rememberable, :validatable
 
   has_many :influencer_jobs,  :class_name => "Job",
-  :foreign_key => :user_id
+  :foreign_key => :user_id, dependent: :destroy
 
   has_many :client_jobs, :class_name => "Job",
-  :foreign_key => :client_id 
+  :foreign_key => :client_id, dependent: :destroy
 
   has_many :orders                         
 
