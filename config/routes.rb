@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   get '/generation_x', to: 'influencers#generation_x'
   get '/millennials', to: 'influencers#millennials'
   get '/generation_z', to: 'influencers#generation_z'
+  get '/all_influencers', to: 'influencers#index_complete'
 
 
-  resources :influencers, only: [:index, :show, :baby_boomers, :generation_x, :millennials, :generation_z] do
+
+  resources :influencers, only: [:index, :index_complete, :show, :baby_boomers, :generation_x, :millennials, :generation_z] do
     resources :jobs, only: [:index, :show, :create, :new] do
           patch :update_job_state, on: :member
       resources :reviews, except: [:new, :show, :update]
