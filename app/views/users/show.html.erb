@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="container">
+
+    <h1 class="text-center"><%= @user.first_name %>'s Profile</h1>
+  </br>
+</br>
+
+
+<%= simple_form_for @user ,:url => {:action => :show, :controller => :users} do |f| %>
+<%= f.error_notification %>
+
+<div class="form-inputs">
+
+  <h2> General Information </h2>
+  
+  <div class="profile-identifiers">
+
+    <%= f.input :first_name, required: true, autofocus: true, readonly: true %>
+        <%= f.input :last_name, required: true, autofocus: true, readonly: true %>
+
+    <%= f.input :email, required: true, autofocus: true, readonly: true %>
+    <% if current_user.role == 'influencer' %>
+    <% if current_user.role == 'influencer' && current_user.media_type == 'instagram' %>
+    <%= f.input :instagram_identifier, required: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, readonly: true %>
+    <% else %>
+    <%= f.label :youtube_identifier, 'Your Youtube Identifier' %>
+    <%= f.input :youtube_identifier, required: false, autofocus: true, label:false, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, readonly: true %>
+    <% end %>
+  </br>
+<hr>
+
+<h2> Pricing for your services</h2>
+<% if current_user.role == 'influencer' && current_user.media_type == 'instagram' %>
+
+<%= f.label :instagram_post_price, 'Instagram Post Price' %>
+<%= f.input :instagram_post_price, required: false, label:false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, readonly: true %>
+<%= f.label :instagram_story_price, 'Instagram Story Price (EUR)' %>
+<%= f.input :instagram_story_price,  required: false, label: false, autofocus: true, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, readonly: true %>
+<% else %>
+<%= f.label :youtube_vid_price, 'Youtube Video Price (EUR)' %>
+<%= f.input :youtube_vid_price, required: false, autofocus: true, label: false, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, readonly: true %>
+<%= f.label :youtube_ref_price, 'Youtube Reference Price (EUR)' %>
+<%= f.input :youtube_ref_price, required: false, autofocus: true, label: false, input_html: { class: 'detailStyling_user'}, label_html: { class: 'detailLabelStyling'}, readonly: true %>
+<% end %>
+</div>
+<% end %>
+<% end %>
+</br>
+<%= link_to "Home", :root, class: 'btn btn-primary' %>
+</div>
+</div>
