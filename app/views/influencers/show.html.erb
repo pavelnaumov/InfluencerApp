@@ -19,9 +19,14 @@
     <div id="social-media-identifier">
       <% if @influencer.media_type == "Instagram" %>
       <h3 class="text-center">Find the influencer on <%= @influencer.media_type.titleize %>: <%= @influencer.instagram_identifier %></h3>
+      <h3 class="text-center">Followers: <%= @influencer.number_of_followers %></h3>
+      <h3 class="text-center">Price for a story <%= humanized_money_with_symbol(@influencer.instagram_story_price) %></h3>
+      <h3 class="text-center">Price for a post <%= humanized_money_with_symbol(@influencer.instagram_post_price) %></h3>
       <% else %>
       <h3 class="text-center">Find the influencer on <%= @influencer.media_type.titleize %>: <%= @influencer.youtube_identifier %></h3>
       <h3 class="text-center">Followers: <%= @influencer.number_of_followers %></h3>
+      <h3 class="text-center">Price for a video <%= humanized_money_with_symbol(@influencer.youtube_vid_price) %></h3>
+      <h3 class="text-center">Price for a reference <%= humanized_money_with_symbol(@influencer.youtube_ref_price) %></h3>
       <% end %>
     </div>
 
@@ -33,6 +38,7 @@
     <div id="influencer-misc">
       <h3 class="text-center">Age: <%= @influencer.age %></h3>
       <h3 class="text-center">Location: <%= @influencer.location %></h3>
+
     </div>
     <div class="proceed">
       <div class="button-submit">
