@@ -62,8 +62,7 @@
 
 <div class="job-done">
   <% if !@job.completed? %>
-  <h3> Mark the job as completed </h3>
-  <%= link_to "Update Job Status", update_job_state_influencer_job_path(@job), method: :patch, class: 'btn btn-default' %>
+  <%= link_to "Mark the job as completed", update_job_state_influencer_job_path(@job), method: :patch, class: 'btn btn-default' %>
   <% else %>
   <button class="btn btn-success" disabled> Job completed</button>
   <% end %>
