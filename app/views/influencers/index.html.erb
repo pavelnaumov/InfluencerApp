@@ -1,3 +1,4 @@
+<% if current_user.role == 'client' %>
 <div class="container">
   <div class="wrapper-index">
     <div class="cards-container-my-orders">
@@ -55,3 +56,6 @@
 </br>
 </br>
 </br>
+<% else %>
+<%= render 'shared/index_influencers' %>
+<% end %>
